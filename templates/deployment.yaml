@@ -2,20 +2,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "{ .Release.Name }}"
+  name: "{{ .Release.Name }}-deployment"
   labels:
-    app: "{ .Release.Name }}"
+    app: "{{ .Release.Name }}-deployment"
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: "{ .Release.Name }}"
+      app: "{{ .Release.Name }}-deployment"
   strategy:
     type: {{ .Values.container.strategytype }}
   template:
     metadata:
       labels:
-        app: "{ .Release.Name }}"
+        app: "{{ .Release.Name }}-deployment"
     spec:
       containers:
       - name: {{ .Release.Name }}
