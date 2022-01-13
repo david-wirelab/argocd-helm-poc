@@ -1,0 +1,17 @@
+service:
+  port: 80
+  spec:
+    type: NodePort
+container:
+  strategytype: RollingUpdate
+  image: public.ecr.aws/aws-containers/hello-eks-anywhere:latest
+  imagePullPolicy: Always
+  ports:
+    containerPort: 80
+  resources:
+    requests:
+      memory: "64Mi"
+      cpu: "250m"
+    limits:
+      memory: "128Mi"
+      cpu: "500m"
