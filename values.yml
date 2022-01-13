@@ -1,7 +1,6 @@
 service:
   port: 80
-  spec:
-    type: NodePort
+  type: NodePort
 container:
   strategytype: RollingUpdate
   image: public.ecr.aws/aws-containers/hello-eks-anywhere:latest

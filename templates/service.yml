@@ -6,7 +6,7 @@ metadata:
   labels:
     name: "{{ .Release.Name }}"
 spec:
-  type: {{ .Values.service.spec.type }}
+  type: {{ .Values.service.type }}
   selector:
     app: "{{ .Release.Name }}"
   ports:
